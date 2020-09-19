@@ -10,9 +10,52 @@ namespace TeksasHoldem.Classes
     {
         //Para, trojka, czwórka, full,kolor, stait, poker 
 
-        public void Para(string[] gracz1,string[] gracz2, string[] rozdane )
+        public (string, string) Para(string[] gracz1, string[] rozdane )
         {
+            //Para -> Dwie te same karty
+            string Winner = null;
+            int j = 0;
 
+            string Helper;
+            Helper = gracz1[0].ToString();
+            foreach (string karta in rozdane)
+            {
+                if (Winner == null && Helper == karta)
+                {
+                    Winner = "Para";
+                }
+                 else if (Winner == "Para" && Helper == karta)
+                {
+                    Winner = "Trójka";
+                }
+                 else if (Winner == "Trójka" && Helper == karta)
+                {
+                    Winner = "Czwórka";
+                }
+            }
+
+            Helper = gracz1[1].ToString();
+            foreach (string karta in rozdane)
+            {
+                if (Winner == null && Helper == karta)
+                {
+                    Winner = "Para";
+                }
+                 else if (Winner == "Para" && Helper == karta)
+                {
+                    Winner = "Trójka";
+                }
+                 else if (Winner == "Trójka" && Helper == karta)
+                {
+                    Winner = "Czwórka";
+                }
+            }
+            if (Winner == null)
+                Winner = "Brak";
+            return ("Para", Winner);
+        }
+        public void Trojka()
+        {
         }
     }
 }

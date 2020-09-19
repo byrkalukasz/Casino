@@ -16,6 +16,7 @@ namespace TeksasHoldem
             int[] ilosc_kart = new int[13];
             Cards cards = new Cards();
             Game game = new Game();
+            WinCondition win = new WinCondition();
 
             Console.WriteLine("Karty dostępne w Grze");
             i = 0;
@@ -94,7 +95,7 @@ namespace TeksasHoldem
             Console.WriteLine();
 
             Console.Write("Rozdane karty to: ");
-
+            
             i = 0;
             foreach (string element in game.trezcie_rozdanei)
             {
@@ -102,6 +103,12 @@ namespace TeksasHoldem
                 i++;
             }
 
+            Console.WriteLine();
+            Console.ReadKey();
+            var GameHelper4 = win.Para(gracz1.kartyGracza, game.trezcie_rozdanei);
+            Console.WriteLine("Gracz pierwszy : "+GameHelper4.Item2);
+            var GameHelper5 = win.Para(gracz2.kartyGracza, game.trezcie_rozdanei);
+            Console.WriteLine("Gracz drugi : " +GameHelper5.Item2);
             Console.ReadKey();
             
         }
