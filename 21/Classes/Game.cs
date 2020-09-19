@@ -32,7 +32,35 @@ namespace _21.Classes
             }
 
             return (karty, _ilosc_kart);
+        }
+        public int Suma(string[] karty)
+        {
+            int suma = 0;
+            int i = 0;
+            int nowa = 0;
+            foreach (string karta in karty)
+            {
+                if (karty[i].ToString() == "J")
+                {
+                    suma = suma + 2;
+                }
+                else if (karty[i].ToString() == "Q")
+                {
+                    suma = suma + 3;
+                }
+                else if (karty[i].ToString() == "K")
+                {
+                    suma = suma + 4;
+                }
+                else
+                {
+                    nowa = Convert.ToInt32(karty[i].ToString());
+                    suma = suma + nowa;
+                }
+                i++;
+            }
 
+            return suma;
         }
     }
 }

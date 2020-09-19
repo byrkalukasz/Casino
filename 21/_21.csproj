@@ -47,6 +47,7 @@
     <Compile Include="Classes\Game.cs" />
     <Compile Include="Classes\GameControler21.cs" />
     <Compile Include="Classes\Gracz.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

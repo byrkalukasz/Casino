@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.1062
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeksasHoldem", "TeksasHoldem\TeksasHoldem.csproj", "{ED894B54-95CA-48EB-BCDA-3CBD11319734}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21", "21\21.csproj", "{50F51CDD-3C09-43BE-A37E-4A3BBBFC5F90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_21", "21\_21.csproj", "{50F51CDD-3C09-43BE-A37E-4A3BBBFC5F90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
