@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ED894B54-95CA-48EB-BCDA-3CBD11319734}</ProjectGuid>
+    <ProjectGuid>{50F51CDD-3C09-43BE-A37E-4A3BBBFC5F90}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TeksasHoldem</RootNamespace>
-    <AssemblyName>TeksasHoldem</AssemblyName>
+    <RootNamespace>_21</RootNamespace>
+    <AssemblyName>21</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,10 +45,8 @@
   <ItemGroup>
     <Compile Include="Classes\Cards.cs" />
     <Compile Include="Classes\Game.cs" />
-    <Compile Include="Classes\GameControler.cs" />
+    <Compile Include="Classes\GameControler21.cs" />
     <Compile Include="Classes\Gracz.cs" />
-    <Compile Include="Classes\WinCondition.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
