@@ -30,16 +30,16 @@ namespace TeksasHoldem
             Console.ReadKey();
             Console.Clear();
             //Console.Write("Podaj ilość graczy(2-8) : ");
-            ilosc_graczy = Convert.ToInt32(Console.ReadLine());
+            //ilosc_graczy = Convert.ToInt32(Console.ReadLine());
             //ToDo: Dodawanie graczy zgodnie z wyborem
             Gracz gracz1 = new Gracz();
-            var helper = game.Rozdaj(ilosc_kart);
-            gracz1.kartyGracza = helper.Item1;
-            cards.ilosc_kart = helper.Item2;
+            var Gracz1Helper = game.Rozdaj(ilosc_kart,2);
+            gracz1.kartyGracza = Gracz1Helper.Item1;
+            ilosc_kart = Gracz1Helper.Item2;
             Gracz gracz2 = new Gracz();
-            var helper2 = game.Rozdaj(ilosc_kart);
-            gracz2.kartyGracza = helper2.Item1;
-            cards.ilosc_kart = helper2.Item2;
+            var Gracz2Helper = game.Rozdaj(ilosc_kart,2);
+            gracz2.kartyGracza = Gracz2Helper.Item1;
+            ilosc_kart = Gracz2Helper.Item2;
             //game.Rozdaj();
             i = 0;
             Console.Write("Karty gracza pierwszego : ");
@@ -63,13 +63,42 @@ namespace TeksasHoldem
 
             Console.WriteLine();
 
-            Console.WriteLine("Karty dostępne w Grze");
-            i = 0;
+            //Rozdanie 3 kart na początku
+            var GameHelper = game.Rozdaj(ilosc_kart, 3);
+            Console.Write("Rozdane karty to: ");
+            game.poczatek = GameHelper.Item1;
 
-            foreach (int element in cards.ilosc_kart)
+            i = 0;
+            foreach (string element in game.poczatek)
             {
-                Console.Write(cards.karty[i] + " w ilości : ");
-                Console.WriteLine(cards.ilosc_kart[i]);
+                Console.Write(game.poczatek[i] + " ");
+                i++;
+            }
+            var GameHelper2 = game.Rozdaj(ilosc_kart, 1);
+            game.drugie_rozdanie = game.poczatek.Concat(GameHelper2.Item1).ToArray();
+
+            Console.WriteLine();
+
+            Console.Write("Rozdane karty to: ");
+
+            i = 0;
+            foreach (string element in game.drugie_rozdanie)
+            {
+                Console.Write(game.drugie_rozdanie[i] + " ");
+                i++;
+            }
+
+            var GameHelper3 = game.Rozdaj(ilosc_kart, 1);
+            game.trezcie_rozdanei = game.drugie_rozdanie.Concat(GameHelper3.Item1).ToArray();
+
+            Console.WriteLine();
+
+            Console.Write("Rozdane karty to: ");
+
+            i = 0;
+            foreach (string element in game.trezcie_rozdanei)
+            {
+                Console.Write(game.trezcie_rozdanei[i] + " ");
                 i++;
             }
 

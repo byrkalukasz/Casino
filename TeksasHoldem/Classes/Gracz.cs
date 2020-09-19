@@ -10,5 +10,8 @@ namespace TeksasHoldem.Classes
     {
         public int Coins;
         public string[] kartyGracza = new string[2];
+
+
+
     }
 }

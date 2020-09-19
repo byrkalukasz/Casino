@@ -46,6 +46,7 @@
     <Compile Include="Classes\Cards.cs" />
     <Compile Include="Classes\Game.cs" />
     <Compile Include="Classes\Gracz.cs" />
+    <Compile Include="Classes\WinCondition.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -10,15 +10,19 @@ namespace TeksasHoldem.Classes
     class Game
     {
         Cards cards = new Cards();
-        public (string[],int[]) Rozdaj(int[] _ilosc_kart)
+        public string[] poczatek = new string[3];
+        public string[] drugie_rozdanie =new string[4];
+        public string[] trezcie_rozdanei =new string[5];
+        public (string[],int[]) Rozdaj(int[] _ilosc_kart,int ile_rozdac)
         {
-            string[] karty = new string[2];
+            string[] karty = new string[ile_rozdac];
             //Ropzdaje dwie losowe kart
             //odejmuje karte z tablicy z iloscia kart
             Random random = new Random();
             int początek = 1;
             int koniec = 13;
-            for (int i = 0; i<=1; i++)
+            ile_rozdac--;
+            for (int i = 0; i<=ile_rozdac; i++)
             {
                 int helper;
                 Thread.Sleep(1000);
@@ -32,14 +36,6 @@ namespace TeksasHoldem.Classes
 
             return (karty,_ilosc_kart);
             
-        }
-        public void RozdajTrzy()
-        {
-            //Rozdawanie na poczatku 
-        }
-        public void DodajJedna()
-        {
-            //dodawanie karty do partii max 2 razy
         }
     }
 }
