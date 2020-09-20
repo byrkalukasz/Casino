@@ -22,12 +22,12 @@ namespace _21.Classes
             PokazKarty(gracz.KartyGracza);
             Console.WriteLine();
             int suma = game.Suma(gracz.KartyGracza);
+            if(suma == 0)
+            {
+                KoniecGry();
+            }
             Console.Write("Suma karty to: " + suma);
             Console.ReadKey();
-            if (suma > 21)
-            {
-                Console.WriteLine("Suma przekracza 21");
-            }
             Console.WriteLine();
             Console.WriteLine("1. Aby dobrać, 2 Aby Zakończyć");
             int wybor = Convert.ToInt32(Console.ReadLine());
@@ -38,12 +38,29 @@ namespace _21.Classes
                     gracz.KartyGracza = gracz.KartyGracza.Concat(GameHelper2.Item1).ToArray();
                     Console.Clear();
                     goto poczatek;
-                    break;
                 case 2:
-                    koniec:
-                    Console.WriteLine("Koniec Gry");
+                    KoniecGry();
+                    Console.ReadKey();
                     break;
             }
+        }
+        void KoniecGry()
+        {
+            Console.WriteLine("Koniec gry");
+            Console.ReadKey();
+            Console.WriteLine("Czy chcesz zagrać ponownie?");
+            int wybor = Convert.ToInt32(Console.ReadLine());
+            switch (wybor)
+            {
+                case 1:
+                    Gra();
+                    break;
+                case 2:
+                    Console.ReadKey();
+                    break;
+            }
+            Gra();
+
         }
         void PokazKarty(string[] karty)
         {

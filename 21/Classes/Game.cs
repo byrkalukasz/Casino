@@ -13,8 +13,6 @@ namespace _21.Classes
         public (string[], int[]) Rozdaj(int[] _ilosc_kart, int ile_rozdac)
         {
             string[] karty = new string[ile_rozdac];
-            //Ropzdaje dwie losowe kart
-            //odejmuje karte z tablicy z iloscia kart
             Random random = new Random();
             int początek = 1;
             int koniec = 13;
@@ -52,6 +50,10 @@ namespace _21.Classes
                 {
                     suma = suma + 4;
                 }
+                else if(karty[i].ToString() == "A")
+                {
+                    suma = suma + 11;
+                }
                 else
                 {
                     nowa = Convert.ToInt32(karty[i].ToString());
@@ -59,7 +61,10 @@ namespace _21.Classes
                 }
                 i++;
             }
-
+            if (suma > 21)
+            {
+                return 0;
+            }
             return suma;
         }
     }
