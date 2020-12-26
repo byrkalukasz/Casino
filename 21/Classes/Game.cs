@@ -52,6 +52,10 @@ namespace _21.Classes
                 {
                     suma = suma + 4;
                 }
+                else if (karty[i].ToString() == "A")
+                {
+                    suma = suma + 1;
+                }
                 else
                 {
                     nowa = Convert.ToInt32(karty[i].ToString());
